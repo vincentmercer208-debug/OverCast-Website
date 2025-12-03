@@ -1,0 +1,164 @@
+:root {
+  --rose: #b22234;       /* deep romantic red */
+  --blush: #ffdde1;      /* soft pink */
+  --lavender: #d8bfd8;   /* gentle lavender */
+  --gold: #ffd700;       /* warm golden accent */
+  --cream: #fff5f7;      /* very light pink background */
+  --text: #2c2c2c;
+  --muted: #6b6b6b;
+  --gothic: 'UnifrakturCook', cursive;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap');
+
+body {
+  margin: 0;
+  background: linear-gradient(to bottom, var(--blush), var(--lavender));
+  color: var(--text);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Header */
+.hero-header {
+  background: var(--rose);
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 4px solid var(--gold);
+}
+
+.hero-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.hero-nav a {
+  color: var(--gold);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+.hero-nav a:hover {
+  color: var(--cream);
+}
+
+.band-name {
+  color: var(--blush);
+  font-size: 2.5rem;
+  margin: 0.5rem 0;
+  letter-spacing: 3px;
+}
+
+.release-title {
+  font-family: var(--gothic);
+  font-size: 3.5rem;
+  margin: 0.5rem 0;
+  color: var(--gold);
+  text-shadow: 2px 2px var(--rose);
+}
+
+.availability {
+  color: var(--cream);
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+/* Buttons */
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.cta {
+  background: var(--gold);
+  color: var(--rose);
+  padding: 0.75rem 1.25rem;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 25px; /* pill shape for softer feel */
+  box-shadow: 0 4px 8px rgba(178,34,52,0.4);
+  transition: all 0.3s ease;
+}
+
+.cta:hover {
+  background: var(--lavender);
+  color: var(--rose);
+}
+
+/* Main section */
+.hero-main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2rem;
+  background: linear-gradient(to bottom, var(--lavender), var(--rose));
+}
+
+.promo-box {
+  background: var(--blush);
+  border: 2px solid var(--rose);
+  padding: 1rem 2rem;
+  text-align: center;
+  color: var(--rose);
+  font-weight: bold;
+  margin-bottom: 2rem;
+  border-radius: 12px;
+}
+
+.band-visuals {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* NEW: single-member enlarged styling */
+.band-visuals.single-member {
+  justify-content: center;
+}
+
+.band-visuals.single-member .member img {
+  width: 500px;
+  max-width: 90vw;
+  height: auto;
+  border: 4px solid var(--gold);
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+}
+
+.member {
+  text-align: center;
+  color: var(--text);
+}
+
+.member img {
+  width: 300px;
+  height: auto;
+  border: 4px solid var(--gold);
+  border-radius: 50%; /* circular portrait for softer vibe */
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+.member p {
+  margin-top: 0.5rem;
+  font-weight: bold;
+  color: var(--rose);
+}
+
+/* Footer */
+.site-footer {
+  text-align: center;
+  padding: 1rem;
+  color: var(--muted);
+  border-top: 2px solid var(--rose);
+  background: var(--blush);
+}
