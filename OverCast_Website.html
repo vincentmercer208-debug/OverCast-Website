@@ -68,6 +68,65 @@
       border-radius: 5px;
       cursor: pointer;
     }
+
+    /* ---------------------- */
+    /* GLITCH BUTTON EFFECT   */
+    /* ---------------------- */
+    .glitch-btn {
+      position: relative;
+      background-color: #e91e63;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      overflow: hidden;
+      font-size: 1em;
+      transition: background 0.2s;
+    }
+
+    .glitch-btn::before,
+    .glitch-btn::after {
+      content: "Download Album";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #e91e63;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      clip-path: inset(0 0 0 0);
+      opacity: 0;
+    }
+
+    .glitch-btn:hover {
+      background-color: #ff2f7f;
+    }
+
+    .glitch-btn:hover::before {
+      animation: glitch1 0.3s linear infinite;
+      opacity: 1;
+    }
+
+    .glitch-btn:hover::after {
+      animation: glitch2 0.3s linear infinite;
+      opacity: 1;
+    }
+
+    @keyframes glitch1 {
+      0% { clip-path: inset(0 0 80% 0); transform: translate(-3px, -3px); }
+      50% { clip-path: inset(10% 0 40% 0); transform: translate(3px, 3px); }
+      100% { clip-path: inset(80% 0 0 0); transform: translate(-3px, 3px); }
+    }
+
+    @keyframes glitch2 {
+      0% { clip-path: inset(80% 0 0 0); transform: translate(3px, -3px); }
+      50% { clip-path: inset(40% 0 10% 0); transform: translate(-3px, 3px); }
+      100% { clip-path: inset(0 0 80% 0); transform: translate(3px, 3px); }
+    }
+
     @media (min-width: 600px) {
       .store-grid {
         display: flex;
@@ -96,8 +155,7 @@
 
   <section id="shows">
     <div class="section-title">Upcoming Shows</div>
-    <ul>
-    </ul>
+    <ul></ul>
   </section>
 
   <section id="album">
@@ -118,27 +176,31 @@
     </div>
     <p>Listen to the full Silent Brawl album and explore more from OverCast.</p>
   </section>
+
   <section id="store">
-  <div class="section-title">Shop OverCast</div>
-  <div class="store-grid">
-    <div class="store-item">
-      <h3>Silent Brawl – Full Album Download</h3>
-    <a href="https://pillows.su/f/a4f4ad5d1e488afdd1c51027c1e59a68" target="_blank">
-        <button>Download Album</button>
-      </a>
+    <div class="section-title">Shop OverCast</div>
+    <div class="store-grid">
+      <div class="store-item">
+        <h3>Silent Brawl – Full Album Download</h3>
+        <a href="https://pillows.su/f/a4f4ad5d1e488afdd1c51027c1e59a68" target="_blank">
+          <button class="glitch-btn">Download Album</button>
+        </a>
+      </div>
+
+      <div class="store-item">
+        <h3>OverCast T-Shirt</h3>
+        <p>£19.99</p>
+        <button>Buy Now</button>
+      </div>
+
+      <div class="store-item">
+        <h3>Silent Brawl – Signed Poster</h3>
+        <p>£9.99</p>
+        <button>Buy Now</button>
+      </div>
     </div>
-    <div class="store-item">
-      <h3>OverCast T-Shirt</h3>
-      <p>£19.99</p>
-      <button>Buy Now</button>
-    </div>
-    <div class="store-item">
-      <h3>Silent Brawl – Signed Poster</h3>
-      <p>£9.99</p>
-      <button>Buy Now</button>
-    </div>
-  </div>
-</section>
+  </section>
+
   <section id="contact">
     <div class="section-title">Booking & Collabs</div>
     <form class="contact-form">
@@ -163,6 +225,7 @@
 
 </body>
 </html>
+
 
 
 
